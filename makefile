@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 MAX_LINE_LENGTH := 88
 
-TARGET_PYTHON_VERSION := py313
+TARGET_PYTHON_VERSION := py311
 
 # 
 # DEVELOPMENT
@@ -21,8 +21,8 @@ install:
 .PHONY: lint
 lint:
 	@printf ">> Checking linting..\n" && \
-	flake8 --max-line-length=${MAX_LINE_LENGTH} --ignore D100,D101,D102,D103,D104,D105,D106,D107,D202,D301,D412,E203,W503,N806,N818 tests && \
-	flake8 --max-line-length=${MAX_LINE_LENGTH} --ignore D100,D101,D102,D103,D104,D105,D106,D107,D202,D301,D412,E203,W503,N806,N818 dataapi && \
+	flake8 --max-line-length=${MAX_LINE_LENGTH} --ignore D100,D101,D102,D103,D104,D105,D106,D107,D202,D301,D401,D412,E203,W503,N806,N818 tests && \
+	flake8 --max-line-length=${MAX_LINE_LENGTH} --ignore D100,D101,D102,D103,D104,D105,D106,D107,D202,D301,D401,D412,E203,W503,N806,N818 homesensorsdataapi && \
 	printf ">> Linting passed! The code is perfect! 🎉\n" || (printf ">> Linting failed! 💥\n" && exit 1)
 
 .PHONY: format

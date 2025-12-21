@@ -1,7 +1,8 @@
 """Input and output models for /sensors_data endpoint."""
 
-from typing import Literal, Optional
 from datetime import datetime, timedelta
+from typing import Literal, Optional
+
 from pydantic import BaseModel, Field
 
 SignalType = Literal["temperature", "humidity", "pressure"]
@@ -32,7 +33,7 @@ class SignalsDataInput(BaseModel):
     )
     signals: list[SignalType] = Field(
         example=["temperature", "pressure"],
-        description="combination of following: temperature, humidity, pressure"
+        description="combination of following: temperature, humidity, pressure",
     )
 
 

@@ -60,3 +60,12 @@ async def get_maximum(inputs: SignalsDataInput) -> SignalsDataOutput:
         "aggregation": output.aggregation,
         "data": output.data,
     }
+
+
+@app.get(
+    "/health",
+    summary="Health check",
+    description="This endpoint checks the health of the application.",
+)
+def health():
+    return {"status": "ok"}

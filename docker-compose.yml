@@ -1,9 +1,8 @@
-version: "3.9"
-
 services:
   api:
     build:
-      context: ./api
+      context: .
+      dockerfile: Dockerfile
     container_name: home-sensors-api
     ports:
       - "${API_PORT}:8000"
@@ -34,7 +33,7 @@ services:
     ports:
       - "${GRAFANA_PORT}:3000"
     volumes:
-      - /var/lib/grafana:/var/lib/grafana
+      - /opt/grafana-data:/var/lib/grafana
       # TODO: add provisioning files
       # - ./grafana/provisioning:/etc/grafana/provisioning
     depends_on:

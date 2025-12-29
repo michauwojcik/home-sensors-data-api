@@ -42,3 +42,10 @@ start_server_debug_mode:
 	export LOG_LEVEL=DEBUG && \
 	uvicorn homesensorsdataapi.main:app --reload
 
+.PHONY: app_set_up
+app_set_up:
+	sudo docker compose --env-file=env.sh up -d
+
+.PHONY: app_restart
+app_restart:
+	sudo docker compose restart
